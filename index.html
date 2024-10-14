@@ -37,6 +37,28 @@
       cursor: pointer;
     }
 
+    .pinyin-part:hover {
+
+        font-weight: 900;
+
+    }
+
+    .pinyin-part-1 {
+      cursor: pointer;
+      color: rgb(71, 71, 240);
+      text-decoration: underline;
+    }
+    .pinyin-part-2 {
+      cursor: pointer;
+      color: rgb(0, 136, 255);
+      text-decoration: underline;
+    }
+    .pinyin-part-3 {
+      cursor: pointer;
+      color: rgb(153, 120, 10);
+      text-decoration: underline;
+    }
+
     /* Responsive CSS */
     @media (max-width: 600px) {
       table, th, td {
@@ -48,9 +70,9 @@
 <body>
 
   <div id="app">
-    <input type="text" v-model="query" placeholder="Search by 字頭 or 粵拼讀音..." @input="search" :disabled="isFieldDisabled">
+    <input type="text" v-model="query" placeholder="Search by 字頭 or 粵拼讀音..." @input="search" :disabled="!dataLoaded">
     
-    <table v-if="filteredData.length">
+    <table v-if="filteredData.length && query">
       <thead>
         <tr>
           <th>字頭</th>
@@ -61,15 +83,21 @@
       </thead>
       <tbody>
         <tr v-for="(entry, index) in filteredData" :key="index">
-          <td>{{ entry.字頭 }}</td>
-          <td>{{ entry.粵拼讀音 }}</td>
+          <td @click="fillQuery(entry.字頭)">{{ entry.字頭 }}</td>
+          <td>
+            <span class="pinyin-part pinyin-part-1" @click="fillQuery(entry.粵拼讀音.match(pinyinPattern)?.[1] || '')">{{ entry.粵拼讀音.match(pinyinPattern)?.[1] || '' }}</span>
+            <span class="pinyin-part pinyin-part-2" @click="fillQuery((entry.粵拼讀音.match(pinyinPattern)?.[1] || '') + (entry.粵拼讀音.match(pinyinPattern)?.[2] || ''))">{{ entry.粵拼讀音.match(pinyinPattern)?.[2] || '' }}</span>
+            <span class="pinyin-part pinyin-part-3" @click="fillQuery(entry.粵拼讀音)">{{ entry.粵拼讀音.match(pinyinPattern)?.[3] || '' }}</span>
+          </td>
           <td>{{ entry.註解 || 'N/A' }}</td>
           <td><svg @click="playSound(entry.粵拼讀音)" class="play-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M3 22v-20l18 10-18 10z"/></svg></td>
         </tr>
       </tbody>
     </table>
 
-    <p v-if="!filteredData.length">No results found</p>
+    <p v-if="!filteredData.length && query">No results found</p>
+    <p v-if="!dataLoaded && !query">Loading data...</p>
+    <p v-if="dataError">Error loading data</p>
   </div>
 
   <script>
@@ -80,21 +108,23 @@
           jsonData: [], // Will hold the loaded JSON data
           filteredData: [], // Filtered search results
           jsonUrl: 'jsonB01_dktNr.json',
-          isFieldDisabled: true,
+          dataLoaded: false, // Tracks if data has been loaded
+          dataError: false, // Tracks if there's a data loading error
+          pinyinPattern: /^(b|c|d|f|g|gw|h|j|k|kw|l|m|n|ng|p|s|t|w|z)?(aa|aai|aau|aam|aan|aang|aap|aat|aak|ai|au|am|an|ang|ap|at|ak|e|ei|eu|em|eng|ep|ek|i|iu|im|in|ing|ip|it|ik|o|oi|ou|on|ong|ot|ok|oe|oeng|oek|eoi|eon|eot|u|ui|un|ung|ut|uk|yu|yun|yut|m|ng)?(\d)?$/, // Regex for matching 粵拼讀音
         }
       },
       mounted() {
-
         // Fetch the JSON file from the URL
         fetch(this.jsonUrl)
           .then(response => response.json())
           .then(data => {
             this.jsonData = data;
-            this.filteredData = [];
-            this.isFieldDisabled = false;
+            this.dataLoaded = true;
           })
-          .catch(error => console.error('Error loading JSON data:', error));
-
+          .catch(error => {
+            this.dataError = true;
+            console.error('Error loading JSON data:', error);
+          });
           /*
         // Load the JSON data (simulating a fetch request)
         this.jsonData = [
@@ -141,16 +171,30 @@
         */
       },
       methods: {
-        search() {
-          const queryLower = this.query.toLowerCase();
-              if (!queryLower) this.filteredData = [];
-              else{
+          search() {
+              if (this.query) {
+                  const queryLower = this.query.toLowerCase();
 
-                this.filteredData = this.jsonData.filter(entry => {
-            return entry.字頭.startsWith(this.query) || entry.粵拼讀音.startsWith(queryLower);
-          });
+                  // Use matchAll to extract words or unicode characters
+                  const results = [...queryLower.matchAll(/[a-z]+\d|\w+|[\u1000-\uFFFF]/g)];
+
+                  // Map the results and flatten the result array
+                  const resultsMap = results.map(rq => {
+                      const searchTerm = rq[0]; // Extract the matched string from the regex result
+                      return this.jsonData.filter(entry => {
+                          return entry.字頭.startsWith(searchTerm) || entry.粵拼讀音.startsWith(searchTerm);
+                      });
+                  });
+
+                  // Flatten the array of arrays into a single array
+                  const res = resultsMap.flat();
+
+                  // Assign the filtered result to filteredData
+                  this.filteredData = res;
+              } else {
+                  this.filteredData = [];
               }
-        },
+          },
         playSound(pinyin) {
             
             const soundUrl = `https://humanum.arts.cuhk.edu.hk/Lexis/Canton/sound/${pinyin}.wav`;
@@ -158,8 +202,16 @@
           const audio = new Audio(soundUrl);
           console.log(soundUrl)
           audio.play();
+        },
+        fillQuery(value) {
+          this.query = value;
         }
-      }
+      },
+        watch: {
+            query() {
+                this.search(); // Automatically trigger search when query changes
+            }
+        }
     });
 
     app.mount('#app');
