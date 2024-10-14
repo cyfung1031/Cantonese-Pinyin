@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Tool</title>
+  <script src="https://unpkg.com/vue@3"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    .play-button {
+      cursor: pointer;
+    }
+
+    /* Responsive CSS */
+    @media (max-width: 600px) {
+      table, th, td {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="app">
+    <input type="text" v-model="query" placeholder="Search by 字頭 or 粵拼讀音..." @input="search" :disabled="isFieldDisabled">
+    
+    <table v-if="filteredData.length">
+      <thead>
+        <tr>
+          <th>字頭</th>
+          <th>粵拼讀音</th>
+          <th>註解</th>
+          <th>Play Sound</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(entry, index) in filteredData" :key="index">
+          <td>{{ entry.字頭 }}</td>
+          <td>{{ entry.粵拼讀音 }}</td>
+          <td>{{ entry.註解 || 'N/A' }}</td>
+          <td><svg @click="playSound(entry.粵拼讀音)" class="play-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M3 22v-20l18 10-18 10z"/></svg></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p v-if="!filteredData.length">No results found</p>
+  </div>
+
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          query: '',
+          jsonData: [], // Will hold the loaded JSON data
+          filteredData: [], // Filtered search results
+          jsonUrl: 'jsonB01_dktNr.json',
+          isFieldDisabled: true,
+        }
+      },
+      mounted() {
+
+        // Fetch the JSON file from the URL
+        fetch(this.jsonUrl)
+          .then(response => response.json())
+          .then(data => {
+            this.jsonData = data;
+            this.filteredData = [];
+            this.isFieldDisabled = false;
+          })
+          .catch(error => console.error('Error loading JSON data:', error));
+
+          /*
+        // Load the JSON data (simulating a fetch request)
+        this.jsonData = [
+          {
+            "頁": 1,
+            "字頭": "丫",
+            "粵拼讀音": "aa1",
+            "超平調": false,
+            "聲母類": null,
+            "註解": null,
+            "_校訂補充": {
+              "異體": [],
+              "原書單字結構": null
+            }
+          },
+          {
+            "頁": 1,
+            "字頭": "呀",
+            "粵拼讀音": "aa1",
+            "超平調": false,
+            "聲母類": null,
+            "註解": null,
+            "_校訂補充": {
+              "異體": [],
+              "原書單字結構": null
+            }
+          },
+          {
+            "頁": 1,
+            "字頭": "雅",
+            "粵拼讀音": "aa1",
+            "超平調": false,
+            "聲母類": null,
+            "註解": "雅片，同鴉",
+            "_校訂補充": {
+              "異體": [],
+              "原書單字結構": null
+            }
+          },
+          // Add more JSON data as necessary...
+        ];
+
+        this.filteredData = [];
+        */
+      },
+      methods: {
+        search() {
+          const queryLower = this.query.toLowerCase();
+              if (!queryLower) this.filteredData = [];
+              else{
+
+                this.filteredData = this.jsonData.filter(entry => {
+            return entry.字頭.startsWith(this.query) || entry.粵拼讀音.startsWith(queryLower);
+          });
+              }
+        },
+        playSound(pinyin) {
+            
+            const soundUrl = `https://humanum.arts.cuhk.edu.hk/Lexis/Canton/sound/${pinyin}.wav`;
+        //   const soundUrl = `https://humanum.arts.cuhk.edu.hk/Lexis/Canton2/play_sound.php?sound=${pinyin}`;
+          const audio = new Audio(soundUrl);
+          console.log(soundUrl)
+          audio.play();
+        }
+      }
+    });
+
+    app.mount('#app');
+  </script>
+</body>
+</html>
