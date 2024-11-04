@@ -7,12 +7,11 @@ Dictionary by https://github.com/jyutnet/cantonese-books-data/
 https://cyfung1031.github.io/Cantonese-Pinyin/
 
 # Learning
-
+https://www.polyu.edu.hk/cbs/pronunciation/cantonese/intro
 https://www.ilc.cuhk.edu.hk/workshop/Chinese/Cantonese/Romanization/
 https://www.polyu.edu.hk/clc/cantonese/home/
 
 ## 粵拼
-
 https://jyutping.org/jyutping/
 
 ## 聲母
@@ -49,19 +48,24 @@ https://www.polyu.edu.hk/clc/cantonese/phoneticKnowledge/initial/recognizingInit
 * ng: 吳(生)
 
 
-## 韻母 (&韻尾)
+## 韻母 (韻腹&韻尾)
 https://www.ilc.cuhk.edu.hk/workshop/Chinese/Cantonese/Romanization/ch3_finals/2_learn.aspx
 https://www.polyu.edu.hk/clc/cantonese/phoneticKnowledge/vowel/recognizingVowel/
 
 ### 60個韻母
-* 主元音（9個）：aa、a、e、i、o、u、oe、eo、yu
-* 韻尾（8個）：u/i、m/n/ng、p/t/k
-* 韻母（60個）：主元音 + 韻尾 （單韻母/複韻母/鼻音韻母/塞音韻母）
+* 廣東話沒有介音。韻母為主元音＋尾音組成。
+* 主元音/韻腹（9個）：aa、a、e、i、o、u、oe、eo、yu
+* 尾音/韻尾（8個）：u/i、m/n/ng、p/t/k
+* 韻母（60個）：韻腹（主元音） + 韻尾（尾音）；可分為 單韻母/複韻母/鼻音韻母/塞音韻母
 #### 單韻母
-* 韻母a有長短之分，較長的用「aa」，較短的則用「a」來表示，例如「街（gaai1）」和「雞（gai1）」。
+* 沒有韻尾。單一主元音。
+* a和eo不會成為單韻母。
 #### 複韻母（i,u）
 * 沒有 ii, uu
+* 韻母a有長短之分，較長的用「aa」，較短的則用「a」來表示。
 * saa1（沙） -> sai（西）、sau（修）
+* gaa1（家） -> gaai1（街）、gai1（雞）
+
 #### 鼻音韻母（m,n,ng）
 * si1（思） -> sim1　　　、sin1（先）、sing1（聲）
 * si2（史） -> sim2（閃）、sin2（鮮）、sing2（醒）
@@ -71,7 +75,7 @@ https://www.polyu.edu.hk/clc/cantonese/phoneticKnowledge/vowel/recognizingVowel/
 * 塞音＝入聲。九聲入調的789聲（＝136聲）。例如「攝（sip3）」、「泄（sit3）」、「識（sik1）」。
 * saa1（沙） -> sap1（濕）、sat1（失）、sak1（塞）
 
-### a, aa
+### 主元音 a, aa
 * aa: 媽媽
 #### ai, aai, au, aau （韻尾i/u）
 * ai: 洗禮 ／ aai: 太太
@@ -85,7 +89,7 @@ https://www.polyu.edu.hk/clc/cantonese/phoneticKnowledge/vowel/recognizingVowel/
 * at: 核突 ／ aat: 發達
 * ak: 麥嘜 ／ aak: 策劃
 
-### e
+### 主元音 e
 * e: 爺爺
 #### ei （韻尾i）
 * ei: 飛機
@@ -94,7 +98,7 @@ https://www.polyu.edu.hk/clc/cantonese/phoneticKnowledge/vowel/recognizingVowel/
 #### ek （韻尾k）
 * ek: 劈石
 
-### i
+### 主元音 i
 * i: 意義
 #### iu （韻尾u）
 * iu: 窈窕
@@ -103,7 +107,7 @@ https://www.polyu.edu.hk/clc/cantonese/phoneticKnowledge/vowel/recognizingVowel/
 #### ik, ip, it （韻尾k/p/t）
 * ik: 積極 ／ ip: 涉獵 ／ it: (親)切
 
-### o
+### 主元音 o
 * o: 菠蘿
 #### ou （韻尾u）
 * ou: 報告
@@ -112,7 +116,7 @@ https://www.polyu.edu.hk/clc/cantonese/phoneticKnowledge/vowel/recognizingVowel/
 #### ot, ok （韻尾t/k）
 * ot: 渴(望) ／ ok: 角落
 
-### u
+### 主元音 u
 * 夫婦
 #### ui （韻尾i）
 * ui: 妹妹
@@ -127,7 +131,7 @@ https://www.polyu.edu.hk/clc/cantonese/phoneticKnowledge/vowel/recognizingVowel/
 * oek: 芍藥 ／ eot: 出術
 
 
-### yu
+### 主元音 yu
 * 乳豬
 #### yun （韻尾n）
 * yun: 宣傳
