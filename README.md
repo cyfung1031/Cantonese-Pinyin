@@ -45,7 +45,7 @@ https://www.ilc.cuhk.edu.hk/workshop/Chinese/Cantonese/Romanization/ch2_initials
 ## 韻母 (&韻尾)
 https://www.ilc.cuhk.edu.hk/workshop/Chinese/Cantonese/Romanization/ch3_finals/2_learn.aspx
 ### 60個韻母
-* 主元音（9個）：aa、a、o、oe、eo、e、u、yu、i
+* 主元音（9+2個）：aa、a、o、oe、eo、e、u、yu、i、（m）、（ng）
 * 韻尾（8個）：u/i、m/n/ng、p/t/k
 * 韻母（60個）：主元音 + 韻尾 （單韻母/複韻母/鼻音韻母/塞音韻母）
 #### 單韻母
