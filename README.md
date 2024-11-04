@@ -175,6 +175,14 @@ https://www.polyu.edu.hk/clc/cantonese/phoneticKnowledge/tone/recognizingTone/
 * 13 母語，以往，每晚，領養，永遠
 * 22 電視，隧道，運動，內地，願望
 
+### 三分九粉 四訓零焚 五奮二份
+* 三九四零五二
+* 三碗細牛腩麵
+* 生果檔唔買賣
+* 經紀對人友善
+* 師傅去元朗路
+* 番茄醬羊肚飯
+
 ### 聲調辨別表
 https://jyutping.org/docs/tone/
 
