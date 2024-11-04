@@ -9,6 +9,7 @@ https://cyfung1031.github.io/Cantonese-Pinyin/
 # Learning
 
 https://www.ilc.cuhk.edu.hk/workshop/Chinese/Cantonese/Romanization/
+https://www.polyu.edu.hk/clc/cantonese/home/
 
 ## 粵拼
 
@@ -16,6 +17,8 @@ https://jyutping.org/jyutping/
 
 ## 聲母
 https://www.ilc.cuhk.edu.hk/workshop/Chinese/Cantonese/Romanization/ch2_initials/2_learn.aspx
+https://www.polyu.edu.hk/clc/cantonese/phoneticKnowledge/initial/recognizingInitial/
+
 ### 巴趴媽花（粵語聲母： b、p、m、f）
 * 薄餅，爸爸，乒乓波
 * 枇杷，拼盤，婆婆
@@ -41,21 +44,32 @@ https://www.ilc.cuhk.edu.hk/workshop/Chinese/Cantonese/Romanization/ch2_initials
 * 鎖匙，壽司，宿舍
 * 飲嘢，仍然，約人
 
+### 唔吳（m和ng可以不跟任何韻母搭配）
+* m: 唔(該)
+* ng: 吳(生)
+
 
 ## 韻母 (&韻尾)
 https://www.ilc.cuhk.edu.hk/workshop/Chinese/Cantonese/Romanization/ch3_finals/2_learn.aspx
+https://www.polyu.edu.hk/clc/cantonese/phoneticKnowledge/vowel/recognizingVowel/
+
 ### 60個韻母
-* 主元音（9+2個）：aa、a、o、oe、eo、e、u、yu、i、（m）、（ng）
+* 主元音（9個）：aa、a、e、i、o、u、oe、eo、yu
 * 韻尾（8個）：u/i、m/n/ng、p/t/k
 * 韻母（60個）：主元音 + 韻尾 （單韻母/複韻母/鼻音韻母/塞音韻母）
 #### 單韻母
 * 韻母a有長短之分，較長的用「aa」，較短的則用「a」來表示，例如「街（gaai1）」和「雞（gai1）」。
 #### 複韻母（i,u）
 * 沒有 ii, uu
+* saa1（沙） -> sai（西）、sau（修）
 #### 鼻音韻母（m,n,ng）
-* 鼻音：m和ng。例如「唔（m4）」和「五（ng5）」。 
+* si1（思） -> sim1　　　、sin1（先）、sing1（聲）
+* si2（史） -> sim2（閃）、sin2（鮮）、sing2（醒）
+* saa1（沙） -> san1（身）、sam1（心）、sang1（僧）
+* saa1（沙） -> saan1（山）、saam1（衫）、saang1（生）
 #### 塞音韻母 (p,t,k)
 * 塞音＝入聲。九聲入調的789聲（＝136聲）。例如「攝（sip3）」、「泄（sit3）」、「識（sik1）」。
+* saa1（沙） -> sap1（濕）、sat1（失）、sak1（塞）
 
 ### a, aa
 * aa: 媽媽
@@ -71,20 +85,6 @@ https://www.ilc.cuhk.edu.hk/workshop/Chinese/Cantonese/Romanization/ch3_finals/2
 * at: 核突 ／ aat: 發達
 * ak: 麥嘜 ／ aak: 策劃
 
-### o
-* o: 菠蘿
-#### ou （韻尾u）
-* ou: 報告
-#### on, ong （韻尾n/ng）
-* on: 乾旱 ／ ong: 廠房
-#### ot, ok （韻尾t/k）
-* ot: 渴(望) ／ ok: 角落
-
-### eo(短), oe(長) 【圓唇韻母】
-* eoi: 造佢 ／ oe: (長)靴
-* eon: 論盡 ／ oeng: 商量
-* eot: 出術 ／ oek: 芍藥
-
 ### e
 * e: 爺爺
 #### ei （韻尾i）
@@ -93,7 +93,6 @@ https://www.ilc.cuhk.edu.hk/workshop/Chinese/Cantonese/Romanization/ch3_finals/2
 * eng: 靚聲
 #### ek （韻尾k）
 * ek: 劈石
-
 
 ### i
 * i: 意義
@@ -104,6 +103,15 @@ https://www.ilc.cuhk.edu.hk/workshop/Chinese/Cantonese/Romanization/ch3_finals/2
 #### ik, ip, it （韻尾k/p/t）
 * ik: 積極 ／ ip: 涉獵 ／ it: (親)切
 
+### o
+* o: 菠蘿
+#### ou （韻尾u）
+* ou: 報告
+#### on, ong （韻尾n/ng）
+* on: 乾旱 ／ ong: 廠房
+#### ot, ok （韻尾t/k）
+* ot: 渴(望) ／ ok: 角落
+
 ### u
 * 夫婦
 #### ui （韻尾i）
@@ -113,6 +121,12 @@ https://www.ilc.cuhk.edu.hk/workshop/Chinese/Cantonese/Romanization/ch3_finals/2
 #### uk, ut （韻尾k/t）
 * uk: 曲目 ／ ut: 活潑
 
+### oe(長)，eo(短) 【圓唇韻母】
+* oe: (長)靴 ／ eoi: 造佢
+* oeng: 商量 ／ eon: 論盡
+* oek: 芍藥 ／ eot: 出術
+
+
 ### yu
 * 乳豬
 #### yun （韻尾n）
@@ -120,17 +134,35 @@ https://www.ilc.cuhk.edu.hk/workshop/Chinese/Cantonese/Romanization/ch3_finals/2
 #### yut （韻尾t）
 * yut: 決絕
 
-### m, ng （不跟任何聲母搭配）
-* m: 唔(該)
-* ng: 吳(生)
+## 聲母韻母IPA
+
+### 聲母
+* b/p/m/f [p][pʰ][m][f]
+* d/t/n/l [t][tʰ][n][l]
+* g/k/ng/h [k][kʰ][ŋ][h]
+* gw/kw/w [kw][kwʰ][w]
+* z/c/s/j [ts][tsʰ][s][j]
+
+### 主元音
+* aa/a [aː][ɐ]
+* e/i/o/u [ɛː][iː][ɔː][uː]
+* oe/eo [œː][ɵ]
+* yu yu[yː]
+
+### 韻尾
+* -i -u [i][u]
+* -m -n -ng [m][n][ŋ]
+* -p -t -k [p̚][t̚][k̚]
 
 
 ## 聲調
 https://www.ilc.cuhk.edu.hk/workshop/Chinese/Cantonese/Romanization/ch4_tones/2_learn.aspx
+https://www.polyu.edu.hk/clc/cantonese/phoneticKnowledge/tone/recognizingTone/
+
 ### ptk入聲
 傳統的漢語聲調以平、上、去、入及陰陽來劃分，把粵語分成9個聲調。入聲分爲上陰入、下陰入、陽入三個聲調，但按音高來看，上陰入跟陰平、下陰入跟陰去、陽入跟陽去相同。香港語言學學會「粵語拼音方案」按實際音高來分，入聲不標，所以只標6聲。
 
-### 六聲
+### 三九四零五二（粵語的 6 個聲調）
 
 * 55 叉燒，先生，尖東，西餐，開心，中間
 * 35 飲水，洗手，小姐，水餃，演講，產品，俾錢
@@ -144,3 +176,7 @@ https://jyutping.org/docs/tone/
 
 ## 懶音
 https://www.polyu.edu.hk/cbs/pronunciation/common_problems/
+
+## 學習詞彙
+* https://www.polyu.edu.hk/clc/cantonese/dailyCommunication/vocabulary/recognizingVocabulary/
+* https://www.polyu.edu.hk/clc/cantonese/dailyCommunication/sentence/recognizingSentence/
