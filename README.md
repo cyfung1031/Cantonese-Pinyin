@@ -193,3 +193,6 @@ https://www.polyu.edu.hk/cbs/pronunciation/common_problems/
 ## 學習詞彙
 * https://www.polyu.edu.hk/clc/cantonese/dailyCommunication/vocabulary/recognizingVocabulary/
 * https://www.polyu.edu.hk/clc/cantonese/dailyCommunication/sentence/recognizingSentence/
+
+## YouTube
+* https://www.youtube.com/watch?v=9Ss7eWUXON0
